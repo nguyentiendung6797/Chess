@@ -1,5 +1,7 @@
 package Piece;
 
+import java.awt.Point;
+
 public class Test {
 	private static int[][] PawnTable = new int[][]
 			{
@@ -25,17 +27,15 @@ public class Test {
             int value = 0;
             if (eSide == ChessSide.Black)
             {
-
-                value = PawnTable[pos.Y, pos.X];
+                value = PawnTable[pos.y][pos.x];
                 //Tốt cánh xe bị trừ 15% giá trị
-                if (pos.X == 8 || pos.X == 1)
+                if (pos.x == 8 || pos.x == 1)
                     value -= 15;
             }
             else
             {
-
-                value = PawnTable[9 - pos.Y, 9 - pos.X];
-                if (pos.X == 8 || pos.X == 1)
+                value = PawnTable[9 - pos.y][9 - pos.x];
+                if (pos.y == 8 || pos.x == 1)
                     value -= 15;
             }
             return value;

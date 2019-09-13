@@ -362,7 +362,7 @@ public class Main extends javax.swing.JFrame {
                                 btn_home.setText("HOME");
                                 panel.add(btn_home);
                                 
-                                        btn_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Home.png"))); // NOI18N
+                                        btn_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/home.png"))); // NOI18N
                                         btn_home.setFocusable(false);
                                         btn_home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
                                         btn_home.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -375,9 +375,10 @@ public class Main extends javax.swing.JFrame {
                                 JPanel panel_1 = new JPanel();
                                 jMenuBar1.add(panel_1);
                                 btn_withComputer = new javax.swing.JButton();
+                                btn_withComputer.setText("Play with computer");
                                 panel_1.add(btn_withComputer);
                                 
-                                		btn_withComputer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/redo.jpg"))); // NOI18N
+                                		btn_withComputer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/withcomputer.png"))); // NOI18N
                                 		btn_withComputer.setFocusable(false);
                                 		btn_withComputer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
                                 		btn_withComputer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -392,7 +393,7 @@ public class Main extends javax.swing.JFrame {
                                 btn_withPlayer = new javax.swing.JButton();
                                 panel_2.add(btn_withPlayer);
                                 
-		                                btn_withPlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/undo.png"))); // NOI18N
+		                                btn_withPlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/redo.png"))); // NOI18N
 		                                btn_withPlayer.setFocusable(false);
 		                                btn_withPlayer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		                                btn_withPlayer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -714,17 +715,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_chessBoardMouseClicked
 
     private void btn_trainingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newGameActionPerformed
-    	HEHE aa = new HEHE(this);
+    	WithFriends aa = new WithFriends(this);
         aa.setVisible(true);
     }//GEN-LAST:event_btn_newGameActionPerformed
     
     private void btn_withComputerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_player_AIActionPerformed
-    	HIHI aa = new HIHI(this);
+    	WithComputer aa = new WithComputer(this);
         aa.setVisible(true);
     }//GEN-LAST:event_btn_player_AIActionPerformed
     
     private void btn_withPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_player_AIActionPerformed
-    	HAHA aa = new HAHA(this);
+    	WithPlayer aa = new WithPlayer(this);
         aa.setVisible(true);
     }//GEN-LAST:event_btn_player_AIActionPerformed
 
