@@ -393,7 +393,7 @@ public class Main extends javax.swing.JFrame {
                                 btn_withPlayer = new javax.swing.JButton();
                                 panel_2.add(btn_withPlayer);
                                 
-		                                btn_withPlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/redo.png"))); // NOI18N
+		                                btn_withPlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/undo.png"))); // NOI18N
 		                                btn_withPlayer.setFocusable(false);
 		                                btn_withPlayer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		                                btn_withPlayer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
