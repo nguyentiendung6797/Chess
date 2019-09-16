@@ -416,6 +416,9 @@ public class Main extends javax.swing.JFrame {
 		                                btn_training.setFocusable(false);
 		                                btn_training.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		                                btn_training.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+		                                
+		                                panel_4 = new JPanel();
+		                                jMenuBar1.add(panel_4);
 		                                btn_training.addActionListener(new java.awt.event.ActionListener() {
                                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                             	btn_trainingActionPerformed(evt);
@@ -902,4 +905,5 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JLabel lb_turn;
+    private JPanel panel_4;
 }
