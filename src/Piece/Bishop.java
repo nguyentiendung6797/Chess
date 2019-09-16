@@ -25,6 +25,15 @@ public class Bishop {
     {
         Black, White;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     private static int[][] BishopTable = new int[][]
 	{
@@ -54,6 +63,10 @@ public class Bishop {
             return BishopTable[9 - pos.y][9 - pos.x];
         }
     }
+	
+	
+	
+	
 	
 	public static ArrayList FindAllPossibleMove(int[][] State, Point pos)
     {
