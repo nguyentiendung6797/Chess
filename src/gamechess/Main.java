@@ -96,7 +96,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         chessBoard.removeAll();
         this.getContentPane().setBackground( Color.WHITE );
-        ImageIcon icon = new ImageIcon("image/MAIN.jpg");
+        ImageIcon icon = new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/image/MAIN.jpg")).getImage().getScaledInstance(650, 650, Image.SCALE_SMOOTH));
         JLabel label = new JLabel(); 
         label.setIcon(icon);
         chessBoard.add(label);
@@ -308,7 +308,7 @@ public class Main extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 204, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        chessBoard.setPreferredSize(new java.awt.Dimension(600, 600));
+        chessBoard.setPreferredSize(new java.awt.Dimension(630, 630));
         chessBoard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 chessBoardMouseClicked(evt);
@@ -362,7 +362,9 @@ public class Main extends javax.swing.JFrame {
                                 btn_home.setText("HOME");
                                 panel.add(btn_home);
                                 
-                                        btn_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/home.png"))); // NOI18N
+                                        //btn_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/home.png"))); // NOI18N
+                                        
+                                        btn_home.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/image/home.png")).getImage().getScaledInstance(65, 65, Image.SCALE_SMOOTH))); // NOI18N
                                         btn_home.setFocusable(false);
                                         btn_home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
                                         btn_home.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -375,10 +377,10 @@ public class Main extends javax.swing.JFrame {
                                 JPanel panel_1 = new JPanel();
                                 jMenuBar1.add(panel_1);
                                 btn_withComputer = new javax.swing.JButton();
-                                btn_withComputer.setText("Play with computer");
+                                btn_withComputer.setText("COMPUTER");
                                 panel_1.add(btn_withComputer);
                                 
-                                		btn_withComputer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/withcomputer.png"))); // NOI18N
+                                		btn_withComputer.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/image/withcomputer.png")).getImage().getScaledInstance(65, 65, Image.SCALE_SMOOTH))); // NOI18N
                                 		btn_withComputer.setFocusable(false);
                                 		btn_withComputer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
                                 		btn_withComputer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -391,9 +393,10 @@ public class Main extends javax.swing.JFrame {
                                 JPanel panel_2 = new JPanel();
                                 jMenuBar1.add(panel_2);
                                 btn_withPlayer = new javax.swing.JButton();
+                                btn_withPlayer.setText("FRIENDS");
                                 panel_2.add(btn_withPlayer);
                                 
-		                                btn_withPlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/undo.png"))); // NOI18N
+		                                btn_withPlayer.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/image/withfriends.png")).getImage().getScaledInstance(65, 65, Image.SCALE_SMOOTH))); // NOI18N
 		                                btn_withPlayer.setFocusable(false);
 		                                btn_withPlayer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		                                btn_withPlayer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -406,9 +409,10 @@ public class Main extends javax.swing.JFrame {
                                 JPanel panel_3 = new JPanel();
                                 jMenuBar1.add(panel_3);
                                 btn_training = new javax.swing.JButton();
+                                btn_training.setText("TRAINING");
                                 panel_3.add(btn_training);
                                 
-		                                btn_training.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/undo.png"))); // NOI18N
+		                                btn_training.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/image/training.png")).getImage().getScaledInstance(65, 65, Image.SCALE_SMOOTH))); // NOI18N
 		                                btn_training.setFocusable(false);
 		                                btn_training.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		                                btn_training.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
