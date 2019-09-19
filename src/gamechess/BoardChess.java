@@ -172,20 +172,19 @@ public class BoardChess implements  Serializable{
                                             +".png");        
 
                         JLabel label = new JLabel(); 
-                            label.setIcon(icon); 
-                            square.add(label); 
+                        label.setIcon(icon); 
+                        square.add(label); 
                     }
                 }
                 else{
                     if(BoardChess.chessBoard[iRow -1][iCol - 1].getColor() != -1){
-                        ImageIcon icon =  icon = new 
-                                    ImageIcon("image/" + 
+                        ImageIcon icon = new ImageIcon("image/" + 
                                             BoardChess.chessBoard[iRow -1][iCol - 1].getName()
                                             +".png");        
 
                         JLabel label = new JLabel(); 
-                            label.setIcon(icon); 
-                            square.add(label); 
+                        label.setIcon(icon); 
+                        square.add(label); 
                     }
                     
                 } 

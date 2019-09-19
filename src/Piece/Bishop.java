@@ -7,8 +7,6 @@ package Piece;
 
 import Piece.Coordinate;
 import Piece.Piece;
-
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,88 +14,112 @@ import java.util.List;
  *
  * @author nthan
  */
-public class Bishop {
+public class Bishop extends Piece {
 
-	static int Side;
-    static ArrayList arrMove;
+    public Bishop(int _color, Coordinate _coordinate) {
+        super(_color, _coordinate);
+        if(this.color == Piece.Black){
+            this.name = "Black_Bishop";
+        }
+        else{
+            this.name = "White_Bishop";
+        }
+        this.Point = Piece.BISHOP_POINT;
+    }
     
-    enum ChessSide
-    {
-        Black, White;
-    }
 
-    private static int[][] BishopTable = new int[][]
-	{
-      //9  8   7   6   5   4   3   2   1  0
-       {0,   0,  0,  0,  0,  0,  0,  0,  0,   0}, //0
 
-       {0,  -20,-10,-10,-10,-10,-10,-10,-20  ,0},
-       {0,  -10,  0,  0,  0,  0,  0,  0,-10  ,0},
-       {0,  -10,  0,  5, 10, 10,  5,  0,-10  ,0},
-       {0,  -10,  5,  5, 10, 10,  5,  5,-10  ,0},
-       {0,  -10,  0, 10, 10, 10, 10,  0,-10  ,0},
-       {0,  -10, 10, 10, 10, 10, 10, 10,-10  ,0},            
-       {0,  -10,  5,  0,  0,  0,  0,  5,-10  ,0},
-       {0,  -20,-10,-40,-10,-10,-40,-10,-20  ,0},
-
-       {0,   0,  0,  0,  0,  0,  0,  0,  0,   0}  //9
-	};
-	
-	public static int GetPositionValue(Point pos, ChessSide eSide)
-    {
-        if (eSide == ChessSide.Black)
-        {
-            return BishopTable [pos.y][pos.x];
+    
+    @Override
+    public List<Coordinate> getPossibleMove(Piece[][] board){      
+        List<Coordinate> listCoordinate = new ArrayList<Coordinate>();
+        
+        // Browse across the lower left
+        if(this.coordinate.getCol() > 0 && this.coordinate.getRow() > 0){
+            int row = this.coordinate.getRow();
+            int col = this.coordinate.getCol();
+             while(row > 0 && col > 0){
+                 row--;
+                 col--;
+                 if(super.checkEmptyCell(board, row, col)){
+                     Coordinate may = new Coordinate(row, col);     
+                      listCoordinate.add(may);
+                   }
+                 else{
+                     if(board[row][col].color != this.color){
+                         Coordinate may = new Coordinate(row, col);     
+                          listCoordinate.add(may);
+                          break;
+                     }
+                     else break;
+                 }
+             }
         }
-        else
-        {
-            return BishopTable[9 - pos.y][9 - pos.x];
+        //Browse cross right on
+        if(this.coordinate.getRow() < 7 && this.coordinate.getCol() < 7){
+            int row = this.coordinate.getRow();
+            int col = this.coordinate.getCol();
+             while(row < 7 && col < 7){
+                 row++;
+                 col++;
+                 if(super.checkEmptyCell(board, row, col)){
+                     Coordinate may = new Coordinate(row, col);     
+                      listCoordinate.add(may);
+                   }
+                 else{
+                     if(board[row][col].color != this.color){
+                         Coordinate may = new Coordinate(row, col);     
+                          listCoordinate.add(may);
+                          break;
+                     }
+                     else break;
+                 }
+             }
         }
-    }
-	
-	public static ArrayList FindAllPossibleMove(int[][] State, Point pos)
-    {
-
-        arrMove = new ArrayList();
-
-        Side = State[pos.x][pos.y] % 10;//Chẵn(0) là quân trắng, lẻ(1) là quân đen
-
-        chessloop(State, pos, 1, 1);
-        chessloop(State, pos, 1, -1);
-        chessloop(State, pos, -1, -1);
-        chessloop(State, pos, -1, 1);
-
-        return arrMove;
-    }
-	
-	static void chessloop(int[][] State, Point pos, int indexx, int indexy)
-    {
-        int stop = 0;
-        int x = pos.x;
-        int y = pos.y;
-        while (stop == 0)
-        {
-            x += indexx;
-            y += indexy;
-            
-            int state = State[x][y];
-            if (state == 0)
-            {
-                arrMove.add(new Point(x, y));
-            }
-            else if (state == -1)
-            {
-                stop = 1;
-            }
-            else
-            {
-                if (state % 10 != Side)
-                {
-                    arrMove.add(new Point(x, y));
-                }
-                stop = 1;
-            }
-
+        
+        //  Browse cross right under
+        if(this.coordinate.getRow() > 0 && this.coordinate.getCol() < 7){
+            int row = this.coordinate.getRow();
+            int col = this.coordinate.getCol();
+             while(row > 0 && col < 7){
+                 row--;
+                 col++;
+                 if(super.checkEmptyCell(board, row, col)){
+                     Coordinate may = new Coordinate(row, col);     
+                      listCoordinate.add(may);
+                   }
+                 else{
+                     if(board[row][col].color != this.color){
+                         Coordinate may = new Coordinate(row, col);     
+                          listCoordinate.add(may);
+                          break;
+                     }
+                     else break;
+                 }
+             }
         }
+        
+        // Browse cross left on
+        if(this.coordinate.getRow() < 7 && this.coordinate.getCol() > 0){
+            int row = this.coordinate.getRow();
+            int col = this.coordinate.getCol();
+             while(row < 7 && col > 0){
+                 row++;
+                 col--;
+                 if(super.checkEmptyCell(board, row, col)){
+                     Coordinate may = new Coordinate(row, col);     
+                      listCoordinate.add(may);
+                   }
+                 else{
+                     if(board[row][col].color != this.color){
+                         Coordinate may = new Coordinate(row, col);     
+                          listCoordinate.add(may);
+                          break;
+                     }
+                     else break;
+                 }
+             }
+        }
+        return listCoordinate;
     }
 }
