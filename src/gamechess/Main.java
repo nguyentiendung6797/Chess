@@ -386,7 +386,7 @@ public class Main extends javax.swing.JFrame {
                                 		btn_withComputer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
                                 		btn_withComputer.addActionListener(new java.awt.event.ActionListener() {
                                             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                            	//btn_withComputerActionPerformed(evt);
+                                            	btn_withComputerActionPerformed(evt);
                                             }
                                         });
                                 
@@ -418,7 +418,7 @@ public class Main extends javax.swing.JFrame {
 		                                btn_training.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 		                                btn_training.addActionListener(new java.awt.event.ActionListener() {
                                             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                            	//btn_trainingActionPerformed(evt);
+                                            	btn_trainingActionPerformed(evt);
                                             }
                                         });
 
@@ -849,8 +849,7 @@ public class Main extends javax.swing.JFrame {
         BoardChess.initValue();
         chessBoard.removeAll();
         this.getContentPane().setBackground( Color.WHITE );
-        //ImageIcon icon = new ImageIcon("image/MAIN.jpg");
-        ImageIcon icon = new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/image/MAIN.jpg")).getImage().getScaledInstance(650, 650, Image.SCALE_SMOOTH));
+        ImageIcon icon = new ImageIcon("image/MAIN.jpg");
         JLabel label = new JLabel(); 
         label.setIcon(icon);
         chessBoard.add(label);
