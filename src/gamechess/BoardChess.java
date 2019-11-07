@@ -5,28 +5,27 @@
  */
 package gamechess;
 
-import Piece.Bishop;
-import Piece.Coordinate;
-import Piece.EmptyCell;
-import Piece.Rook;
-import Piece.King;
-import Piece.Knight;
-import Piece.Queen;
-import Piece.Pawn;
-import Piece.Piece;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.io.Serializable;
-import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.TitledBorder;
+
+import Piece.Bishop;
+import Piece.Coordinate;
+import Piece.EmptyCell;
+import Piece.King;
+import Piece.Knight;
+import Piece.Pawn;
+import Piece.Piece;
+import Piece.Queen;
+import Piece.Rook;
 
 /**
  *
@@ -195,7 +194,7 @@ public class BoardChess implements  Serializable{
     }
     
     
-    //  CHECK WIN 1 - WIN ; 2 hÃ²a
+    //  CHECK WIN 1 - WIN ; 2 hòa
     public static int checkResult(){
         //check WIN
         if(checkMate() == true){
