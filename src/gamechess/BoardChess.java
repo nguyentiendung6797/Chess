@@ -69,7 +69,6 @@ public class BoardChess implements  Serializable{
             board[6][i] = new Pawn(Piece.White, new Coordinate(6, i));
         }
         
-        
         // Cell empty
         for(int iRow = 2; iRow <= 5; iRow ++){
             for(int iCol = 0; iCol <= 7; iCol++){
@@ -78,7 +77,6 @@ public class BoardChess implements  Serializable{
         }  
         
     }
-    
     
     public static void ReverseChessBoard(Piece [][] boardNormal, Piece [][] boardReverse){
         for(int iRow = 0; iRow < 8; iRow++){
@@ -114,8 +112,6 @@ public class BoardChess implements  Serializable{
          if(BoardChess.turn == Piece.White){
              Main.Mymain.lb_turn.setText("Turn of White");
          }
-         
-         
          
         checkInit = true;
         JPanel chessBoard = new JPanel();
